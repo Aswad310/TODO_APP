@@ -1,0 +1,6 @@
+<!-- 
+    copyright bar
+-->
+<footer>
+    
+</footer>

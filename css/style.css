@@ -1,0 +1,14 @@
+body {
+    background: #F3F3F4;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .btn-createAccount {
+    color: white !important;
+    background-color:#4CDF85;
+  }
