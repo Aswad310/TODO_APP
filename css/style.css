@@ -1,6 +1,15 @@
+/* Login Page */
 body {
     background: #F3F3F4;
   }
+
+a.acc{
+    color: white;
+    text-decoration: none;
+}
+a.acc:hover{
+    color: #0B5ED7;
+}
   
   .btn-login {
     font-size: 0.9rem;
@@ -11,4 +20,11 @@ body {
   .btn-createAccount {
     color: white !important;
     background-color:#4CDF85;
+  }
+
+/* Signup Page */
+  .card-img-left {
+    width: 45%;
+    background: scroll center url('https://images.unsplash.com/photo-1518976024611-28bf4b48222e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80');
+    background-size: cover;
   }

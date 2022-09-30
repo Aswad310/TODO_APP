@@ -20,5 +20,4 @@
     <title> ToDo - App</title>
   </head>
 
-    <?php require('foot.php') ?>
 </html>
