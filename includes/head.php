@@ -20,4 +20,4 @@
     <title> ToDo - App</title>
   </head>
 
-</html>
+  <?php require('./config/constants.php') ?>
