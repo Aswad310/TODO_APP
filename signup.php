@@ -1,11 +1,8 @@
 <!-- 
     Sign-up Page
  -->
-
 <title>Todo - Sign-Up</title>
-
 <?php require('./includes/head.php') ?>
-
 <body>
   <div class="container">
     <div class="row mt-5">
@@ -22,10 +19,9 @@
                     echo $_SESSION['username'];
                     unset($_SESSION['username']);
                 }
-
-                if(isset($_SESSION['username'])){
-                    echo $_SESSION['username'];
-                    unset($_SESSION['username']);
+                if(isset($_SESSION['password'])){
+                    echo $_SESSION['password'];
+                    unset($_SESSION['password']);
                 }
               ?>
             </div>
@@ -70,19 +66,13 @@
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, md5($_POST['password']));
     $confirmpassword = mysqli_real_escape_string($conn, md5($_POST['confirmpassword']));
-    
-    echo $username.'<br>';
-
     // 2. query to get username
     $sql = "SELECT * FROM todo.tbl_users WHERE username = '$username' ";
-
     // 3. execute query
     $res = mysqli_query($conn, $sql) or die('error in query '.mysqli_error($conn)); 
-
     // 4. check query whether execute or not
     if($res == true){
       $count = mysqli_num_rows($res);
-
       // check unqiue username
       if($count==1){
         // failure message
@@ -92,35 +82,32 @@
         // redirct to signup page
         header('location:signup.php');
       }
-
       // check same password and confirm_password
-      if($password != $confirmpassword){
+      elseif($password != $confirmpassword){
         // failure message
         $_SESSION['password'] = "<div class='alert alert-danger' role='alert'>
                                   Password and Confirm Password are not same
                                 </div>";
         // redirct to signup page
-        header('location:signup.php');    
+        header('location:signup.php');  
       }
-
       // execute insert query
-      $sql2 = "INSERT INTO tbl_users SET
-                  username = '$username',
-                  password = '$password'
-                ";
-
-      $res2 = mysqli_query($conn, $sql2) or die('error in query2 '.mysqli_error($conn)); 
-
-      if($res2 == true){
-        // session start
-        $_SESSION['password'] = "<div class='alert alert-success' role='alert'>
-                                  Login Successfully!
-                                </div>";
-        // redirect to todo page
-        header('location:'.'todo.php');
+      else{
+        $sql2 = "INSERT INTO tbl_users SET
+                    username = '$username',
+                    password = '$password'
+                  ";
+        $res2 = mysqli_query($conn, $sql2) or die('error in query2 '.mysqli_error($conn));
+        if($res2 == true){
+          // session start
+          $_SESSION['register_success'] = "<div class='alert alert-success' role='alert'>
+                                            Register Successfully!
+                                          </div>";
+          // redirect to todo page
+          header('location:'.'index.php');
+        }
       }
     }
   }
 ?>
-
 <?php require('./includes/foot.php') ?>

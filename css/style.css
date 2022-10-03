@@ -4,13 +4,33 @@ body {
   height: 100%;
 }
 
+a{
+  text-decoration: none;
+}
+
 a.acc {
   color: white;
-  text-decoration: none;
 }
 
 a.acc:hover {
   color: #0B5ED7;
+}
+
+button.add{
+  background-color: #73dc77; 
+  color: #fff;
+}
+
+a.done{
+  color: #55AB6F; 
+}
+
+a.edit{
+  color: #23578F; 
+}
+
+a.delete{
+  color: #ED5565; 
 }
 
 .btn-login {
@@ -35,3 +55,5 @@ a.acc:hover {
 #page-content {
   flex: 1 0 auto;
 }
+
+/* font colors */

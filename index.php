@@ -2,9 +2,7 @@
     Login Page
  -->
 <title>Todo - Login</title>
-
 <?php require('./includes/head.php') ?>
-
 <body>
   <div class="container">
     <div class="row mt-5">
@@ -13,11 +11,16 @@
           <div class="card-body p-4 p-sm-5">
             <h2 class="card-title text-center mb-5 fw-light fs-2">ToDo App | LOG IN</h2>            
               <?php
-                  if(isset($_SESSION['login'])){
-                      echo $_SESSION['login'];
-                      unset($_SESSION['login']);
-                  }
-                ?>
+                if(isset($_SESSION['login_failure'])){
+                    echo $_SESSION['login_failure'];
+                    unset($_SESSION['login_failure']);
+                }
+
+                if(isset($_SESSION['register_success'])){
+                  echo $_SESSION['register_success'];
+                  unset($_SESSION['register_success']);
+                }
+              ?>
             <form method="POST" action="">
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="username" id="floatingInput" placeholder="aswadali" required>
@@ -59,17 +62,23 @@
     $res = mysqli_query($conn, $sql) or die('error '.mysqli_error($conn));
     // 4. check whether query executed or not
     if($res == true){
+      // count num. of rows
       $count = mysqli_num_rows($res);
+      // fetching data from database
+      $row = mysqli_fetch_assoc($res);
+      $id = $row['id'];
+      $user = $row['username'];   
       // check user present
       if($count == 1){
-        $_SESSION['login'] = "<div class='alert alert-success' role='alert'>
-                                Welcome Back! $username
-                              </div>";
-        header('location:todo.php');
+        $_SESSION['login_success'] = "<div class='alert alert-success' role='alert'>
+                                        Welcome Back! {$user}
+                                      </div>";
+        $_SESSION['id'] = $id;
+        header('location:manage-todo.php');
       } else{
-        $_SESSION['login'] = "<div class='alert alert-success' role='alert'>
-                                User not found!
-                              </div>";
+        $_SESSION['login_failure'] = "<div class='alert alert-danger' role='alert'>
+                                        User not found. Please try again!
+                                      </div>";
         header('location:index.php');
       }
     }
