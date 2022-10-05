@@ -1,10 +1,12 @@
 <!-- 
     Navbar
 -->
+<?php require ('login-check.php') ?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="..." height="36">
+      <img src="./images/todo-logo.png" alt="todo-logo-img" height="36">  
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,7 +20,7 @@
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="./logout.php">Logout</a>
         </li>
       </ul>
     </div>

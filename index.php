@@ -20,6 +20,12 @@
                   echo $_SESSION['register_success'];
                   unset($_SESSION['register_success']);
                 }
+
+
+                if(isset($_SESSION['no_login_message'])){
+                  echo $_SESSION['no_login_message'];
+                  unset($_SESSION['no_login_message']);
+                }
               ?>
             <form method="POST" action="">
               <div class="form-floating mb-3">
@@ -34,6 +40,7 @@
 
               <div class="d-grid">
                 <button class="btn btn-primary btn-login text-uppercase fw-bold" name="submit" type="submit">Login</button>
+                <!-- <0a href="manage-todo.php?id=<?php echo $id; ?>" class="btn btn-primary btn-login text-uppercase fw-bold" name="submit" type="submit">Login</0a> -->
               </div>
               
               <hr class="my-4">
@@ -71,7 +78,7 @@
       // check user present
       if($count == 1){
         $_SESSION['login_success'] = "<div class='alert alert-success' role='alert'>
-                                        Welcome Back! {$user}
+                                        <h4>Welcome Back! {$user}</h4>
                                       </div>";
         $_SESSION['id'] = $id;
         header('location:manage-todo.php');

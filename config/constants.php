@@ -18,7 +18,7 @@
     /* Database Connection */
     $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD) or die('error'.mysqli_error($conn));
     if($conn == true){
-        echo "Database connect successfully!";
+        // echo "Database connect successfully!";
     }
     /* Select Database */
     $db_select = mysqli_select_db($conn, DB_NAME) or die('error'.mysqli_error($conn));
