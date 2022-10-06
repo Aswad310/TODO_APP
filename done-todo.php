@@ -1,5 +1,6 @@
 <?php
     require('./config/constants.php');
+    // require
     if(isset($_GET['id'])){
         // 1. get data from user
         $id = $_GET['id'];
@@ -13,6 +14,7 @@
             $_SESSION['done_todo'] = "<div class='alert alert-success' role='alert'>
                                             You have completed the task!
                                     </div>";
+            sleep(2);
             header('location:manage-todo.php');
         } else{
             // something went wrong

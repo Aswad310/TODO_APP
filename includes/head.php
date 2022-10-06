@@ -20,13 +20,19 @@
     <!-- AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/todo-logo.png">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title> ToDo - App</title>
+    <title> TODO - APP</title>
   </head>
 
   <?php require('./config/constants.php') ?>

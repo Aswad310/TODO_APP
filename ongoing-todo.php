@@ -11,7 +11,7 @@
         if($res == true){
             // done
             $_SESSION['ongoing_todo'] = "<div class='alert alert-warning' role='alert'>
-                                            You have setback the status!
+                                            You have set back the status!
                                         </div>";
             header('location:manage-todo.php');
         } else{

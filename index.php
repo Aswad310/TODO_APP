@@ -1,7 +1,7 @@
 <!-- 
     Login Page
  -->
-<title>Todo - Login</title>
+<title>TODO - Login</title>
 <?php require('./includes/head.php') ?>
 <body>
   <div class="container">
@@ -9,7 +9,7 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mt-5">
         <div class="card border-0 shadow rounded-3 my-5">
           <div class="card-body p-4 p-sm-5">
-            <h2 class="card-title text-center mb-5 fw-light fs-2">ToDo App | LOG IN</h2>            
+            <h2 class="card-title text-center mb-5 fw-light fs-2">TODO APP | LOG IN</h2>            
               <?php
                 if(isset($_SESSION['login_failure'])){
                     echo $_SESSION['login_failure'];
