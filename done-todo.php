@@ -11,10 +11,9 @@
         // 4. check whether query executed or not
         if($res == true){
             // done
-            $_SESSION['done_todo'] = "<div class='alert alert-success' role='alert'>
-                                            You have completed the task!
-                                    </div>";
-            sleep(2);
+            $_SESSION['done_todo'] = "<script>
+                                        swal('Whoohoooo!', 'You has been completed the task!', 'success')
+                                      </script>";
             header('location:manage-todo.php');
         } else{
             // something went wrong

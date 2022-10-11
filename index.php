@@ -77,10 +77,14 @@
       $user = $row['username'];   
       // check user present
       if($count == 1){
-        $_SESSION['login_success'] = "<div class='alert alert-success' role='alert'>
-                                        <h4>Welcome Back! {$user}</h4>
-                                      </div>";
+        $_SESSION['login_success'] = "<div class='custom-alert'>
+                                        <strong class='custom-alert-font'>Howdy, {$user} </strong> <br />
+                                        <small>Goals and Activities Monitoring Dashboard</small>
+                                    </div>";
         $_SESSION['id'] = $id;
+        
+        $_SESSION['login_time'] = 60;
+
         header('location:manage-todo.php');
       } else{
         $_SESSION['login_failure'] = "<div class='alert alert-danger' role='alert'>

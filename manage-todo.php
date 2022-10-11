@@ -1,11 +1,11 @@
 <!-- 
     ToDo List
  -->
- <title>TODO - DASHBOARD</title>
+ <title>TODO - Dashboard</title>
  <?php require('./includes/head.php') ?>
  <?php require('./includes/header.php') ?>
  <?php require('./edit-model.php') ?>
- <body class="vh-100">
+ <body style="font-family: 'Rubik', sans-serif;" class="vh-100">
   <section>   
     <div class="container">
       <div class="mt-3">
@@ -17,7 +17,7 @@
                     Session out login Again!
                   </div>";
           }
-          if(isset($_SESSION['id'])){
+          if(isset($_SESSION['id'])){ 
             $id = $_SESSION['id'];
           }
         ?>
@@ -44,7 +44,7 @@
                   <button type="submit" name="submit" class="fa-sharp fa-solid fa-plus btn add">Add</button>
                 </div>
               </form>
-              <table class="table table-bordered md-4 font-family-roboto" >
+              <table class="table table-bordered md-4 " >
                 <thead>
                   <tr>
                     <th scope="col">#</th>

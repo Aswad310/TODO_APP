@@ -2,8 +2,7 @@
 $(document).ready(function(){
     $('.alert-btn-done').click(function(){
       if(confirm('Do you want to done the task?')){
-        // return true;
-        swal("Good job!", "You have completed the task!", "success");
+        return true;
       }else{
         return false;
       }        

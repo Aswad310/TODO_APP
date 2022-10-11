@@ -14,7 +14,7 @@
         // 4. check whether query executed or not
         if($res == true){
             $_SESSION['add_todo'] = "<div class='alert alert-success' role='alert'>
-                                        Todo Item included to your table!    
+                                        TODO Item successfully included into your table!     
                                     </div>";
             header('location:manage-todo.php');
         } else {
