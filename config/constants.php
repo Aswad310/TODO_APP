@@ -11,7 +11,7 @@
     ############ CONSTANTS  ############
     define('LOCALHOST', 'localhost');
     define('DB_USERNAME', 'root');
-    define('DB_PASSWORD', '*Aswad*123#');
+    define('DB_PASSWORD', '*Aswad*123');
     define('DB_NAME', 'todo');
     
     ############ MySQL Workbench Connection ############
